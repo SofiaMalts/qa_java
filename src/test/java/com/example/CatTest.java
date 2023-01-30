@@ -22,15 +22,11 @@ public class CatTest {
         assertEquals("Мяу", cat.getSound());
     }
     @Test
-    public void getFoodReturnValidList(){
-        try {
+    public void getFoodReturnValidList() throws Exception{
             Feline feline = new Feline();
             Cat cat = new Cat(feline);
             List<String> expected = List.of ("Животные", "Птицы", "Рыба");
             Mockito.when(predator.eatMeat()).thenReturn(expected);
             assertEquals(expected, cat.getFood());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 }

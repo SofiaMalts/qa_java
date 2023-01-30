@@ -15,17 +15,13 @@ public class FelineTest {
     Animal animal;
 
     @Test
-    public void eatFoodReturnListOfValues(){
-        try {
+    public void eatFoodReturnListOfValues() throws Exception{
             Feline feline = new Feline();
             String animalType = "Хищник";
             List<String> expectedFoodList = List.of("Животные", "Птицы", "Рыба");
             Mockito.when(animal.getFood(animalType)).thenReturn(expectedFoodList);
             List<String> actualList = feline.eatMeat();
             assertEquals(expectedFoodList, actualList);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Test
